@@ -1,0 +1,27 @@
+﻿Адрес: https://intense-harbor-08686.herokuapp.com/
+
+Админка: https://intense-harbor-08686.herokuapp.com/admin/login/?next=/admin/
+Логин:  1
+Пароль: 1
+
+Список всех постов: https://intense-harbor-08686.herokuapp.com/
+Информация про конкретный пост: https://intense-harbor-08686.herokuapp.com/{номер поста}
+
+Список категорий с входящими в них постами: 
+https://intense-harbor-08686.herokuapp.com/categories/
+
+Список постов в опеделённой категории: 
+https://intense-harbor-08686.herokuapp.com/categories/{номер категории}
+
+Создание категории:
+new_item = requests.post('https://intense-harbor-08686.herokuapp.com/categories/', data={'name': 'requests item'})
+Ответ, включающий ID категории для последующего добавления постов:
+new_item.json()
+{'id': 4, 'name': 'requests item', 'posts': []}
+
+Создание поста в новой категории:
+new_post = requests.post('https://intense-harbor-08686.herokuapp.com/', data={'title': 'пост', 'author': '1', 'category': '4', 'status': 'P', 'content': 'содержимое 6'})
+new_post.json()
+
+Посмотреть созданную категорию и пост в ней:
+https://intense-harbor-08686.herokuapp.com/categories/{номер категории}
